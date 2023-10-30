@@ -1,0 +1,58 @@
+# Byte-compiled / optimized files
+__pycache__/
+*.pyc
+*.session
+my_bot.session-journal
+# Virtual environment directory (if you're using virtualenv)
+venv/
+
+# Environment variables file (if using dotenv or similar)
+.env
+
+# Log files
+*.log
+
+# API keys, tokens, and other secrets
+secrets.ini
+config.ini
+secrets.json
+.env.local
+
+# Compiled Python files
+*.pyc
+
+# User-specific IDE settings
+.idea/
+.vscode/
+
+# Dependency directories
+node_modules/
+vendor/
+bower_components/
+
+# Compiled output
+__pycache__/
+*.pyc
+*.pyo
+__pycache__/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Mac OS system files
+.DS_Store
+
+# Windows system files
+Thumbs.db
+
+# IDE project files (e.g., PyCharm)
+.idea/
+*.iml
+
+# Temporary and backup files
+*~
+*.bak
+
+# General project files
+__pycache__/
+.vscode/
