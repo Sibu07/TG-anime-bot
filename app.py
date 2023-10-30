@@ -38,31 +38,21 @@ def search(client, message):
 @app.on_message(filters.command("sLink"))
 def search(client, message):
     input_text = message.text.split(" ", 1)
-    
-    # Check if the user provided a query
     if len(input_text) > 1:
-        # Extract the query from the message
         query = input_text[1]       
         path = f"anime/gogoanime/watch/{query}"
         url = base_url + path
-
-        # Make the API request
         response = requests.get(url, params={"server": "gogocdn"})
         if response.status_code == 404:
             message.reply(f"Anime name `{query}` not found.")
         else:
             data = response.json()
-            # Send the API response as a message
-           # Extract URLs and their quality and format them as a message
             message_text = "Streaming Sources:\n"
             for source in data['sources']:
                 message_text += f"Quality: {source['quality']}\n"
                 message_text += f"URL: `{source['url']}`\n"
-
-            # Send the formatted message as a reply
             message.reply(message_text)
     else:
-        # If no query provided, send a default message
         message.reply("Please provide an anime name. For example: /sLink spy-x-family-episode-1")
 
 # Define a handler for incoming text messages
