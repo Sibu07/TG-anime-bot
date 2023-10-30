@@ -35,6 +35,23 @@ def search(client, message):
     # Send the API response as a message
     message.reply(str(data))
 
+@app.on_message(filters.command("find"))
+def search(client, message):
+    # Get the user's message text
+    input_text = message.text.split(" ", 1)[1]
+
+    # Construct the API path with the extracted text input
+    path = f"anime/gogoanime/watch/{input_text}"
+    url = base_url + path
+
+    # Make the API request
+    response = requests.get(url, params={"server": "gogocdn"})
+    data = response.json()
+    
+    # Send the API response as a message
+    message.reply(str(data))
+
+
 # Define a handler for incoming text messages
 @app.on_message(filters.text)
 def echo(client, message):
