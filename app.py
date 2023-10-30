@@ -42,5 +42,5 @@ def echo(client, message):
 
 if __name__ == "__main__":
     logger.info("Bot started!")
-    PORT = int(os.environ.get("PORT", 3000))
-    app.run(port=PORT)
+    port = int(os.environ.get("PORT", 3000))
+    app.run(port=port)
